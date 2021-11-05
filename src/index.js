@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Amplify from "aws-amplify";
 import { AmazonAIPredictionsProvider } from "@aws-amplify/predictions";
+import 'ant/dist/antd.css'
 
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
@@ -10,6 +11,7 @@ import "./index.css";
 import "@reach/tabs/styles.css";
 import "@reach/dialog/styles.css";
 import amplifyConfig from "./aws-exports";
+import react-scripts from React
 
 Amplify.configure(amplifyConfig);
 Amplify.addPluggable(new AmazonAIPredictionsProvider());

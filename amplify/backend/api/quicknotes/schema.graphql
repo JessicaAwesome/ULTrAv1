@@ -1,7 +1,41 @@
-type Note @model @auth(rules: [{ allow: owner }]) {
+type Productivity @model @auth(rules: [{ allow: owner }]) {
   id: ID!
-  title: String!
-  text: String!
-  createdAt: String
-  updatedAt: String
+  EVENTDTM: AWSDateTime!
+  EMPLOYEE_BARCODE: String
+  EMPLOYEE_LOGIN: String
+  FULL_COST_CODE: String!
+  COST_CODE_LEVEL_1: String
+  COST_CODE_LEVEL_2: String 
+  COST_CODE_LEVEL_3: String 
+  COST_CODE_LEVEL_4: String 
+  TIME_IN_LOCAL_TIMEZONE: AWSDateTime
+  TIME_OUT_LOCAL_TIMEZONE: AWSDateTime
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Roster @model {
+  id: ID!
+  EMPLOYEE_LOGIN: String!
+  EMPLOYEE_BARCODE: String!
+  COST_CENTER: String!
+  FCLM_AREA_CODE: String!
+  SITE: String!
+  TYPE: String!
+}
+
+type Top3 @model {
+  id: ID!
+  FIRST_MOST: String!
+  SECOND_MOST: String!
+  THIRD_MOST: String!
+}
+
+type CostCodeRollup @model {
+  FULL_COST_CODE: String!
+  COST_CODE_LEVEL_1: String!
+  COST_CODE_LEVEL_2: String!
+  COST_CODE_LEVEL_3: String 
+  COST_CODE_LEVEL_4: String 
+  COST_CODE_LEVEL_5: String
 }
